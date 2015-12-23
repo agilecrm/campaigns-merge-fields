@@ -7,7 +7,7 @@ Merge Fields incorporates values from a record. The record can be a contact, dea
     Ex:- Dear {{first_name}} {{last_name}}
 
 <<<<<<< HEAD
-![Figure 1-1](fig1.png "Figure 1-1")
+![Figure 1-1](screenshot/fig1.png "Figure 1-1")
 =======
 ![Figure 1-1](fig.png "Figure 1-1")
 >>>>>>> 121cd87e4cbacf7066cb4fd0f7c3cba1cbf83455
