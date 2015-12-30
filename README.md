@@ -6,13 +6,9 @@ Merge Fields incorporates values from a record. The record can be a contact, dea
 
     Ex:- Dear {{first_name}} {{last_name}}
 
-<<<<<<< HEAD
 ![Figure 1-1](screenshot/fig1.png "Figure 1-1")
-=======
-![Figure 1-1](fig.png "Figure 1-1")
->>>>>>> 121cd87e4cbacf7066cb4fd0f7c3cba1cbf83455
 
-In above screenshot “first_name” Merge Field is used for sending a mail with greeting. When the mail will be sent then the recipient’s first name is retrieved and is inserted in place of the merge field.
+In above screenshot “first_name” , “ last_name" Merge Fields are used for sending an email with greeting. When the mail is sent , the recipient’s first name and last name are retrieved and inserted in place of the merge field.
 
 ### **Syntax of Merge Fields:**
 
@@ -36,7 +32,7 @@ The detailed list of entities and the properties along with the description and 
 |{{email_work}}|This merge field returns work email id of contact person.| |
 |{{email_home}}|This merge field returns personal email id of contact person.|  |
 |{{company}}| This merge field returns Company name.| Agile CRM|
-|{{title}}|This merge will field return job description or title.|Software Developer<br>Project Manager|
+|{{title}}|This merge field returns job description or title.|Software Developer<br>Project Manager|
 |{{website}}|This merge field returns latest updated website address|https://www.agilecrm.com|
 |{{phone}}|This merge field returns latest updated phone number.| |
 |{{phone_work}}|This merge field returns work phone number. | |
@@ -55,9 +51,9 @@ The detailed list of entities and the properties along with the description and 
 |{{owner.name}}|This merge field returns owner name .| Agile CRM|
 |{{owner.email}}|This merge field returns owner email id.|care@agilecrm.com|
 |{{owner.calendar_url}}|This merge field returns owner calender url address| |
-|{{{owner.signature}}}| | |
+|{{{owner.signature}}}|This merge field returns signature of owner in text format. | |
 |{{{unsubscribe_link}}}|This merge field returns a link to  unsubscribe by clicking on which user can unsubscribe for the services.|https://michel.agilecrm.com/unsubscribe?sid=5709436928655360|
-|{{{online_link}}}|This merge field returns online link. It’s only work for HTML not for TextBox.|
+|{{{online_link}}}|This merge field returns online link. It’s only work for HTML not for Text Content.|
 |{{{powered_by}}}|This merge field returns name of powerd by and name of powered by with link. It’s work only  for HTML.|Powered by [Agile](https://www.agilecrm.com/)|
 |{{custom field}}|Description is given below..| |
 
@@ -84,9 +80,9 @@ If we have custom field type is a check box then merge field returns on or off v
 |{{deal.milestone_changed_time_string}}|This merge field returns in which date and time milestone changed.|12 Dec, 10:15|
 |{{deal.custom_data.fieldname}}|Description is Given below..|  | |
 <span style="font-size:15px;">**{{deal.custom_data.fieldname}}-**</span> Custom field returns the value from custom field which is created by owner. When owner creates a custom field and provide name or label of custom field along with type (Text, TextArea, Date, List, CheckBox, Number, Formula). Merge Fields work on the custom fields. Just place the Custom Field Name in the syntax and you can retrieve the custom field data. This custom field should match exactly  with the database name and it is case sensitive.
-<br>    For e.g. If my custom field name is **“Currency”** then merge field is
+<br>    For e.g. If my custom field name is **“currency”** then merge field is
 
-    {{deal.custom_data.Currency}}
+    {{deal.custom_data.currency}}
 
 If we have custom field type is a check box then merge field returns on or off value. And if have custom field type is a Date then merge field returns date in (`DD Mon YYYY`) format.
 
@@ -423,6 +419,14 @@ e.g.- If custom field name is **“mobile”** then we have to write
 
 <center>**Note:-** For more details visit https://stripe.com/docs/api#
 
+## **Mustache**
+
+Agile supports advanced Mustache templates. You can use Mustache syntax in your email content or other places.
+Refer - http://mustache.github.io/mustache.5.html for conditions or loops.
+
+You can test your mustache template code using this tool - http://trymustache.com/
+
+
 ## **Mustache Array Example**
 
 ```json
@@ -526,11 +530,3 @@ Syntax of Merge Fields:-
     * michael@agilecrm.com
 
 **Note:-** Dot notation may be used to access keys that are properties of objects in a view.
-
-## **Mustache**
-
-Agile supports advanced Mustache templates. You can use Mustache syntax in your email content or other places.
-Refer - http://mustache.github.io/mustache.5.html for conditions or loops.
-
-You can test your mustache template code using this tool - http://trymustache.com/
-
