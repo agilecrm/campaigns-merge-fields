@@ -14,7 +14,7 @@ In above screenshot “first_name” , “ last_name" Merge Fields are used for
 
  {{field name}} or {{{field name}}}
 
-If merge field data contain any special character or escape sequence then use three curly braces else use two curly braces syntax. **Merge field name are case sensitive (fisrt_name not equal to First_name).** We can also use merge fields for custom fields created by user. Merge Field feature provide special operation on some field,  for example they provide manipulated data for first name, last name, etc. Merge Fields work across different entities like Contacts, Deals,Calendar etc.
+If merge field data contain any special character or escape sequence then use three curly braces else use two curly braces syntax. **Merge field name are case sensitive (first_name not equal to First_name).** We can also use merge fields for custom fields created by user. Merge Field feature provide special operation on some field,  for example they provide manipulated data for first name, last name, etc. Merge Fields work across different entities like Contacts, Deals,Calendar etc.
 
 ## **Detailed list of Entities and Properties:**
 The detailed list of entities and the properties along with the description and example are mentioned below.
