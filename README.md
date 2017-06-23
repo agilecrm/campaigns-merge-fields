@@ -289,7 +289,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{shopify.landing_site}}|It returns the URL address for the page where the buyer landed when entering the shop.|
 |{{shopify.source_name}}|It returns the Where the checkout originated. Possible values are: "web", "pos", "iphone", and "android".|
 |{{shopify.referring_site}}|It returns the website url address that the customer clicked on to come to the shop.|
-<center>**Note:-** For more details visit  https://docs.shopify.com/api/order
+**Note:-** For more details visit  https://docs.shopify.com/api/order
 
 ### **6. Shopify Checkout**
 
@@ -357,7 +357,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{shopify.customer.state}}|It returns the state of the customer. The  customer is disabled or enabled.|
 
 
-<center>**Note:-** For more details visit  https://docs.shopify.com/api/checkout
+**Note:-** For more details visit  https://docs.shopify.com/api/checkout
 
 ### **7. Common Merge Fields for all Stripe Events**
 
@@ -438,7 +438,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{stripe.statement_discriptor}}|It returns the extra information about a charge. This will appear on your customer’s credit card statement.|
 |{{stripe.status}}|It returns the status of the payment is either `succeeded` or `failed`.|
 
-<center>**Note:-** For more details visit https://stripe.com/docs/api#
+**Note:-** For more details visit https://stripe.com/docs/api#
 
 ## **Mustache**
 
