@@ -78,10 +78,12 @@ If we have custom field type is a check box then merge field returns on or off v
 |{{deal.milestone}}|This merge field returns Milestone of deal.|New/Won/Lost|
 |{{deal.description}}|This merge field returns Description of the deal.| |
 |{{deal.expected_value}}|This merge field returns Value of deal.| |
+|{{deal.expected_value_exact}}|This merge field returns Value of deal including decimal point.| |
 |{{deal.probability}}|This merge field returns probability of deal.|Integer value range between 0 to 100|
 |{{deal.old_milestone}}|This merge field returns name of old milestone. If deal milestone will be changed.|New/Won/Lost|
 |{{deal.milestone_changed_time_string}}|This merge field returns in which date and time milestone changed.|12 Dec, 10:15|
-|{{deal.custom_data.fieldname}}|Description is Given below..|  | |
+|{{deal.custom_data.fieldname}}|Description is Given below..|  |
+
 <span style="font-size:15px;">**{{deal.custom_data.fieldname}}-**</span> Custom field returns the value from custom field which is created by owner. When owner creates a custom field and provide name or label of custom field along with type (Text, TextArea, Date, List, CheckBox, Number, Formula). Merge Fields work on the custom fields. Just place the Custom Field Name in the syntax and you can retrieve the custom field data. This custom field should match exactly  with the database name and it is case sensitive.
 <br>    For e.g. If my custom field name is **“currency”** then merge field is
 
@@ -118,8 +120,65 @@ The detailed list of Trigger Events and the properties along with the descriptio
 |{{message.tags}}|This merge field returns the tags applied in message.|
 |{{message.sender}}| ||
 
-### **2. Shopify Customer Created and Updated Event**
 
+### **2 . Form Submit Trigger**
+
+| <center> <span style="font-size:16px;">Merge Fields      |  <center> <span style="font-size:16px;">Description  |
+|:---------------------------------|:------------------------------------|
+|{{form.first_name}}|This merge field returns first name of contact person.|
+|{{form.last_name}}|This merge field returns last name of contact person.|
+|{{form.email}}|This merge field returns email id of contact person.|
+|{{form.company}}|This merge field returns Company name.|
+|{{form.title}}|This merge field returns job description or title.|
+|{{form.website}}|This merge field returns website address.|
+|{{form.phone}}|This merge field returns phone number.|
+|{{form.city}}|This merge field returns City name from contact address.|
+|{{form.state}}|This merge field returns State name from contact address.|
+|{{form.country}}|This merge field returns Country name from contact address.|
+|{{form.zip}}|This merge field returns ZIP code or postal code from address.|
+|{{form.address}}|This merge field returns address of contact person.|
+|{{form.tags}}|This merge field returns tags which is added in form.|
+|{{form.note}}|This merge field returns notes about the contact which is added in form.|
+|{{form.custom field}}|This merge field returns value same as Contact's custom field. ||
+
+Also Form merge fields have two cases:<br>
+* If form name is mapped with Agile Field, then use agile field. For example if form id is mapped with Agile field 'First Name' then merge field is {{form.first_name}}.
+
+![Figure 1-2](screenshot/fig2.png "Figure 1-2")
+
+In above screenshot If custom field name is **Language** then merge field is **{{form.Language}}**.
+
+* If form name is not mapped with Agile Field, then use given ID name. For example {{form.non_agile_field}}
+
+![Figure 1-3](screenshot/fig3.png "Figure 1-3")
+
+In above screenshot as field id is **feedback** then we can use **{{form.feedback}}** as merge field.
+
+### **2 . Ticket Event**
+
+| <center> <span style="font-size:16px;">Merge Fields      |  <center> <span style="font-size:16px;">Description             |    <center> <span style="font-size:16px;">Example           |
+|:-----------------------------|:------------------------------------|:---------------------|
+|{{ticket.id}}|This merge field returns Ticket id.||
+|{{ticket.subject}}|This merge field returns the subject of Ticket.||
+|{{ticket.status}}|This merge field returns the status of the Ticket.|New, Open, Pending, Closed|
+|{{ticket.requester_name}}|This merge field returns the Ticket requester name.||
+|{{ticket.requester_email}}|This merge field returns the Ticket requester email.||
+|{{ticket.group.id}}|This merge field returns Ticket group id.||
+|{{ticket.group.group_name}}|This merge field returns Ticket group name.||
+|{{ticket.assignee.name}}|This merge field returns Ticket assignee name.||
+|{{ticket.assignee.email}}|This merge field returns Ticket assignee email.||
+|{{ticket.priority}}|This merge field returns priority of the Ticket.|Low, Medium, High|
+|{{ticket.type}}|This merge field returns type of the Ticket.|Problem, Question|
+|{{ticket.source}}|This merge field returns Ticket source.|Email, Webform|
+|{{ticket.created_by}}|This merge field returns who created the Ticket.|Customer|
+|{{ticket.createdOn}}|This merge field returns the date when Ticket has been created.|Fri May 19, 2017|
+|{{ticket.closedOn}}|This merge field returns the date when Ticket has been closed.|Fri May 19, 2017|
+|{{ticket.lastUpdatedOn}}|This merge field returns the date when Ticket has been updated at last time.| Fri May 19, 2017|
+|{{ticket.last_reply_text}}|This merge field returns the last response text on the Ticket.||
+|{{ticket.first_notes_text}}|This merge field returns the note that is created at the time of Ticket creation.||
+|{{ticket.no_of_reopens}}|This merge field returns how many times Ticket has been open.|||
+
+### **4. Shopify Customer Created and Updated Event**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
@@ -162,7 +221,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 **Note:-** For more details visit  https://docs.shopify.com/api/customer
 
 
-### **3. Shopify Order Event**
+### **5. Shopify Order Event**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
@@ -232,7 +291,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{shopify.referring_site}}|It returns the website url address that the customer clicked on to come to the shop.|
 <center>**Note:-** For more details visit  https://docs.shopify.com/api/order
 
-### **4. Shopify Checkout**
+### **6. Shopify Checkout**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
@@ -300,7 +359,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 
 <center>**Note:-** For more details visit  https://docs.shopify.com/api/checkout
 
-### **5. Common Merge Fields for all Stripe Events**
+### **7. Common Merge Fields for all Stripe Events**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
@@ -334,7 +393,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{stripe.sources.name}}|It returns name of the card holder.|
 |{{stripe.sources.tokenization_method}}|It returns If the card number is tokenized, this is the method that was used. Can be apple_pay or android_pay.|
 
-### **6. Stripe Customer Deleted Event**
+### **8. Stripe Customer Deleted Event**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
@@ -352,7 +411,7 @@ e.g.- If custom field name is **“mobile”** then we have to write
 |{{stripe.sources.total_count}}| |
 |{{stripe.sources.url}}|| |
 
-### **7. Common Merge Fields for all Charge Event of Stripe**
+### **9. Common Merge Fields for all Charge Event of Stripe**
 
 | <center> <span style="font-size:15px;">Merge Fields      |  <center> <span style="font-size:15px;">Description  |
 |:---------------------------------|:------------------------------------|
