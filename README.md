@@ -26,7 +26,7 @@ The detailed list of entities and the properties along with the description and 
 |{{last_name}}|It returns last name of contact person.| clark → clark<br>WarNer→ WarNer<br>James Bond→ James bond |
 |{{first_name_fix}}|This merge field converts first letter of the first name in uppercase. If first name having two words separated by space then it returns only first word.|michel → Michel <br>micHEl→ MicHEl<br>david Warner → David|
 |{{last_name_fix}}|This merge field converts first letter of last name in uppercase. If last name having two words separated by space then it returns only first word.|clark → Clark<br>WarNer→ WarNer<br>James Bond→ James|
-|{{name_fix}}|This merge field concat first word of first name and first word of last name separated by space  and converts both name first letter in uppercase and remaining letter will be as it is.|david warner- David Warner<br>dAvid wArner- DAvid WArner<br>If first name=”abraham Benjamin”last name=”de villiers” then output is : “abraham De”|
+|{{name_fix}}|This merge field concat first word of first name and first word of last name separated by space  and converts both name first letter in uppercase and remaining letter will be as it is.|david warner- David Warner<br>dAvid wArner- DAvid WArner<br>If first name=”abraham Benjamin”last name=”de villiers” then output is : “Abraham De”|
 |{{score}}|It returns integer value of score.| |
 |{{email}}|This merge field returns latest email id of contact person.|michel_clark@gmail.com|
 |{{email_work}}|This merge field returns work email id of contact person.| |
